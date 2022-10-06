@@ -1,0 +1,32 @@
+﻿@page "/TimeTrip"
+
+<h3>TimeTrip</h3>
+<label>Distância a percorrer em quilômetros</label>
+<input @bind="distancia" class="form-control" />
+ <br />
+<label>Velocidade média(km/horas)</label>
+<input @bind="velocidade" class="form-control" />
+ <br />
+<label>Tempo estimado em horas</label>
+<input @bind="horas" class="form-control" />
+ <br />
+<p class=" text-danger h6"><b>Observação: é possível copiar o Tempo estimado de horas.</b></p>
+<br />
+<div class="text-center">
+    <button @onclick="CalcularTempo" class="btn btn-outline-primary" >Calcular Tempo</button>
+</div>
+
+
+
+
+
+@code {
+    double horas;
+    double distancia;
+    double velocidade;
+
+    void CalcularTempo()
+    {
+        horas = distancia / velocidade;
+    }
+}
